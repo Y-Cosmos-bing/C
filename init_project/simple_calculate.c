@@ -67,7 +67,7 @@ int main(){
             //     continue;
             // }
         }
-        // 输入正确的格式时
+        // 在这里我还可以使用switch case 语句来写计算逻辑
         else 
         {
             if (operator == '+')
