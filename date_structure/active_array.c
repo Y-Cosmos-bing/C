@@ -64,6 +64,40 @@ bool insert(Array_type value,int index )
 }
 
 
+
+// 声明并定义删除数组中元素的函数
+bool del(int index)
+{
+    // 当删除元素总数为0时，不可删除
+    if (end = 0)
+    {
+        printf("当前数组内已无元素存在，不可删除!\n");
+        return false ;
+    }
+
+    else 
+    {
+        if (index = end)
+        {
+            // 话说什么才叫删除呀，以0来代之吗，用静态变量的初始化来定义删去？
+            array[index] = 0;
+            return true;
+        }
+        else if ((index > -1)&&(index < end))
+        {
+            // 先删除这个位置的索引，再平移后面的变量
+            array[index] = 0;
+            for (int i=index;i<end;i++)
+            {
+                array[i] = array[i+1];
+            }
+            return true;
+        }
+    }
+    
+ }
+
+
 // 声明并定义打印数组的函数
 void array_print()
 {   
@@ -99,6 +133,9 @@ int main()
     insert(6,2);
     array_print();
     insert(99,1);
+    array_print();
+
+    del(1);
     array_print();
 
     return 0;
